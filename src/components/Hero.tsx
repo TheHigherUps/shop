@@ -3,7 +3,9 @@ import { ShoppingCart } from "lucide-react"
 
 export default function Hero() {
     function playHonk() {
-        alert("HONK!")
+        const audio = new Audio("/assets/sounds/oos-error.mp3")
+        audio.play()
+        // alert("HONK!")
     }
     return (
         <div className="photoHeader background">

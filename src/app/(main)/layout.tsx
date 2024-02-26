@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { Inter, Dongle } from "next/font/google"
-import "./globals.css"
+import "../globals.css"
 import Header from "@/components/Header"
 import Banner from "@/components/Banner"
 import { AuthContextProvider } from "@/contexts/AuthContext"
