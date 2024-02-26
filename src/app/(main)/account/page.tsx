@@ -33,7 +33,7 @@ const Login = () => {
         await login(formData.email, formData.password)
     }
     return (
-        <main className="grid place-items-center">
+        <main className="grid place-items-center min-h-[calc(100vh-3rem)]">
             <div className="flex flex-col gap-4 px-12 py-4 rounded-xl bg-white text-black mt-12 items-center">
                 <div className="text-center">
                     <div className="text-5xl font-bold">
