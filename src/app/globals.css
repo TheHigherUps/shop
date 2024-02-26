@@ -265,3 +265,7 @@ body {
     margin: -15px;
     background-color: rgb(126 163 199);
 }
+
+.text-shadow {
+    text-shadow: 0 -1px white, 0 1px white, -1px 0 white, 1px 0 white;
+}

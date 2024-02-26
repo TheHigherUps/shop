@@ -38,7 +38,7 @@ export default function Hero() {
                     size={30}
                 />
             </h1>
-            <div className="headerUnderline"></div>
+            <div className="headerUnderline z-[9999]"></div>
         </div>
     )
 }
