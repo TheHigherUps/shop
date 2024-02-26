@@ -22,7 +22,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <AuthContextProvider>
-                <body className={dongle.className}>
+                <body className={dongle.className + " bg-[#2d6c9c]"}>
                     {/* <Banner /> */}
                     <Header />
                     {children}
