@@ -31,8 +31,10 @@ export default function Home() {
                         }
                         href="/assault-beans-cbe"
                         price="70"
+                        increasedPrice="70"
                         discount
                         discountPrice="50"
+                        increasedDiscountPrice="60"
                     />
 
                     <Card
@@ -40,6 +42,7 @@ export default function Home() {
                         image="/assets/images/lethal-beans.png"
                         quantity="25+"
                         price="12.00"
+                        increasedPrice="15.00"
                         href="/lethal-beans"
                     />
 
@@ -49,6 +52,7 @@ export default function Home() {
                         quantity="50+"
                         href="/assault-beans"
                         price="7.00"
+                        increasedPrice="12.00"
                     />
                     <Card
                         title="TheHigherUps Assault Bench"
@@ -56,6 +60,7 @@ export default function Home() {
                         quantity="100+"
                         href="/assault-bench"
                         price="32.00"
+                        increasedPrice="37.00"
                     />
                 </CardContainer>
             </main>

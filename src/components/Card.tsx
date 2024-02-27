@@ -1,6 +1,8 @@
+"use client"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
+import { useSearchParams } from "next/navigation"
 import { ReactElement } from "react"
 
 interface CardProps {
@@ -10,12 +12,16 @@ interface CardProps {
     quantity: string
     quantityExtra?: ReactElement
     price: string
+    increasedPrice: string
     href: string
     discount?: boolean
     discountPrice?: string
+    increasedDiscountPrice?: string
 }
 
 export default function Card(props: CardProps) {
+    const params = useSearchParams()
+    const isIncreased = params.get("increaseCost") === "yes"
     return (
         <div className="flex flex-col gap-12  justify-center md:flex-row bg-[#9c9c9c9f] px-1 sm:px-12 py-4 font-bold border-y border-black">
             <div className="grid place-items-center relative w-44 h-48 mx-auto ">
@@ -44,12 +50,12 @@ export default function Card(props: CardProps) {
                                 props.discount && "text-red-500 line-through"
                             )}
                         >
-                            ${props.price}
+                            ${isIncreased ? props.increasedPrice : props.price}
                         </span>
                     </p>
                     {props.discount && (
                         <span className="text-2xl">
-                            ${props.discountPrice} (Discount)
+                            ${isIncreased ? props.increasedDiscountPrice : props.discountPrice} (Discount)
                         </span>
                     )}
                 </div>
