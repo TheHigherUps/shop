@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils"
 import { ShoppingCart } from "lucide-react"
 import { useState } from "react"
+import { Boxes } from "./ui/background-boxes"
 
 export default function Hero() {
     const [clicked, setClicked] = useState(false)
@@ -18,28 +19,9 @@ export default function Hero() {
         }, 500)
     }
     return (
-        <div className="photoHeader background">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <h1 className="photoText " id="hdrTxt">
+        <div className=" h-96 relative w-full overflow-hidden bg-slate-900 flex flex-col items-center justify-center rounded-lg">
+            <Boxes className="w-full" />
+            <h1 className="photoText z-[9999]" id="hdrTxt">
                 TheHigherUps Shop{" "}
                 <ShoppingCart
                     onClick={playHonk}
