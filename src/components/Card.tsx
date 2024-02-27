@@ -18,7 +18,7 @@ interface CardProps {
 export default function Card(props: CardProps) {
     return (
         <div className="flex flex-col gap-12  justify-center md:flex-row bg-[#9c9c9c9f] px-12 py-4 font-bold border-y border-black">
-            <div className="grid place-items-center p-4 relative w-36">
+            <div className="grid place-items-center relative w-44 ">
                 <Image
                     className="rounded-xl"
                     src={props.image}
