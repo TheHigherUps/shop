@@ -1,3 +1,4 @@
+import Banner from "@/components/Banner"
 import Card from "@/components/Card"
 import CardContainer from "@/components/CardContainer"
 import Hero from "@/components/Hero"
@@ -6,6 +7,9 @@ import TimeDisplay from "@/components/TimeDisplay"
 export default function Home() {
     return (
         <>
+            <Banner>
+                This website is in beta and is currently under construction
+            </Banner>
             <Hero />
             <TimeDisplay />
             <main className="min-h-screen bg-[#2d6c9c]">
