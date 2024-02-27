@@ -18,10 +18,15 @@ export default function Home() {
                                 (Cool Beans Edition)
                             </div>
                         }
-                        image="/"
-                        title="Tolve"
-                        quantity="123"
-                        href="123"
+                        image="/assets/images/assault-beans.png"
+                        title="Assault beans"
+                        quantity="10"
+                        quantityExtra={
+                            <span className="text-red-500">
+                                (Selling Fast!)
+                            </span>
+                        }
+                        href="55"
                         price="123"
                     />
                 </CardContainer>

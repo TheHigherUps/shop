@@ -7,7 +7,7 @@ interface CardProps {
     title: string
     titleExtra?: ReactElement
     quantity: string
-    quatitiyExtra?: ReactElement
+    quantityExtra?: ReactElement
     price: string
     href: string
     discount?: boolean
@@ -31,8 +31,9 @@ export default function Card(props: CardProps) {
                     {props.title}
                     {props.titleExtra}
                 </div>
-                <div>
+                <div className="flex gap-2">
                     <p className="text-2xl">Quantity: {props.quantity}</p>
+                    {props.quantityExtra}
                 </div>
                 <div>
                     <p className="text-2xl">Price: {props.price}</p>
