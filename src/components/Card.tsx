@@ -23,8 +23,8 @@ export default function Card(props: CardProps) {
     const params = useSearchParams()
     const isIncreased = params.get("increaseCost") === "yes"
     return (
-        <div className="flex flex-col gap-12  justify-center md:flex-row bg-[#9c9c9c9f] px-1 sm:px-12 py-4 font-bold border-y border-black">
-            <div className="grid place-items-center relative w-44 h-48 mx-auto ">
+        <div className="flex flex-col gap-8  md:flex-row bg-[#9c9c9c9f] px-1 sm:px-4 py-4 font-bold border border-black rounded-xl ">
+            <div className="relative w-44 h-48 mx-auto">
                 <Image
                     className="rounded-xl"
                     src={props.image}
@@ -32,8 +32,8 @@ export default function Card(props: CardProps) {
                     fill
                 />
             </div>
-            <div className="flex flex-col justify-evenly gap-4 grow flex-1">
-                <div className="flex gap-2 items-center text-4xl">
+            <div className="flex flex-col justify-evenly gap-4">
+                <div className="flex gap-2 items-center text-4xl self-center md:self-start">
                     {props.title}
                     {props.titleExtra}
                 </div>

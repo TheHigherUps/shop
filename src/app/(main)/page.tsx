@@ -3,6 +3,8 @@ import Card from "@/components/Card"
 import CardContainer from "@/components/CardContainer"
 import Hero from "@/components/Hero"
 import TimeDisplay from "@/components/TimeDisplay"
+import { BackgroundGradient } from "@/components/ui/background-gradient"
+import { Button, MovingBorder } from "@/components/ui/moving-border"
 
 export default function Home() {
     return (
@@ -15,7 +17,10 @@ export default function Home() {
             <main className="min-h-screen bg-[#2d6c9c]">
                 <div className="text-center text-6xl py-4">Products</div>
                 <CardContainer>
+                    <BackgroundGradient className="p-1">
+
                     <Card
+            
                         titleExtra={
                             <div className="rounded-full bg-gray-500/75 grid place-items-center px-1 text-xl text-yellow-300">
                                 (Cool Beans Edition)
@@ -36,6 +41,7 @@ export default function Home() {
                         discountPrice="50"
                         increasedDiscountPrice="60"
                     />
+                    </BackgroundGradient>
 
                     <Card
                         title="TheHigherUps Lethal Beans"
@@ -62,6 +68,31 @@ export default function Home() {
                         price="32.00"
                         increasedPrice="37.00"
                     />
+                    <Card
+                        title="TheHigherUps Assault Whistle"
+                        image="/assets/images/whistle.jpeg"
+                        quantity="100+"
+                        href="/assault-whistle"
+                        price="32.00"
+                        increasedPrice="37.00"
+                    />
+                    <Card
+                        title="TheHigherUps Assault Pipe"
+                        image="/assets/images/assault-pipe.webp"
+                        quantity="100+"
+                        href="/assault-pipe"
+                        price="32.00"
+                        increasedPrice="37.00"
+                    />
+                    <Card
+                        title="TheHigherUps Assault Telescope"
+                        image="/assets/images/assault-telescope-pe.webp"
+                        quantity="100+"
+                        href="/assault-telescope"
+                        price="32.00"
+                        increasedPrice="37.00"
+                    />
+                    <div className="text-3xl place-self-center">More Products Coming Soon </div>
                 </CardContainer>
             </main>
         </>
