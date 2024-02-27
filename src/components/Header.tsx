@@ -11,7 +11,9 @@ export default function Header() {
     const { loading, user } = useAuth()
     return (
         <header className="w-full flex justify-between items-center px-8 bg-white text-black h-12">
-            <h1 className="text-4xl text-center font-bold">TheHigherUps</h1>
+            <h1 className="text-4xl text-center font-bold">
+                TheHigherUps <BetaIcon />
+            </h1>
             <div className="flex flex-row gap-4 items-center">
                 {user && <div className="text-2xl ">Welcome, {user.name}</div>}
                 <UserTags />
@@ -46,4 +48,12 @@ const NavIcon = () => {
             </Link>
         )
     }
+}
+
+const BetaIcon = () => {
+    return (
+        <div className="inline text-xl bg-gradient-to-br from-blue-500 to-red-200 rounded-xl px-2">
+            BETA
+        </div>
+    )
 }
