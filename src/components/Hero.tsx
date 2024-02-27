@@ -1,4 +1,5 @@
 "use client"
+import { cn } from "@/lib/utils"
 import { ShoppingCart } from "lucide-react"
 import { useState } from "react"
 
@@ -38,11 +39,14 @@ export default function Hero() {
             <span></span>
             <span></span>
             <span></span>
-            <h1 className="photoText" id="hdrTxt">
+            <h1 className="photoText " id="hdrTxt">
                 TheHigherUps Shop{" "}
                 <ShoppingCart
                     onClick={playHonk}
-                    className=" align-middle inline transition-colors"
+                    className={cn(
+                        "align-middle inline transition-all",
+                        clicked && "rotate-[360deg] fo"
+                    )}
                     fill="1"
                     stroke={clicked ? "#dad" : "white"}
                     size={30}

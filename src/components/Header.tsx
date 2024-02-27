@@ -10,7 +10,7 @@ export default function Header() {
     const pathname = usePathname()
     const { loading, user } = useAuth()
     return (
-        <header className="w-full flex justify-between items-center px-8 bg-white text-black h-12">
+        <header className="w-full flex justify-between items-center px-2 sm:px-8 bg-white text-black h-12">
             <h1 className="text-4xl text-center font-bold">
                 TheHigherUps <BetaIcon />
             </h1>
