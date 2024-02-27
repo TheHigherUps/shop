@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
-import { HTMLAttributes, ReactElement, forwardRef } from "react"
+import { ReactElement } from "react"
 
 interface CardProps {
     image: string

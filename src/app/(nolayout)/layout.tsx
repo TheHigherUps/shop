@@ -1,6 +1,6 @@
-import type { Metadata } from "next"
-import { Inter, Dongle } from "next/font/google"
 import "@/app/globals.css"
+import type { Metadata } from "next"
+import { Dongle, Inter } from "next/font/google"
 const inter = Inter({ subsets: ["latin"] })
 const dongle = Dongle({ subsets: ["latin"], weight: "300" })
 

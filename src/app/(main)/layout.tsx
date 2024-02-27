@@ -1,10 +1,9 @@
-import type { Metadata } from "next"
-import { Inter, Dongle } from "next/font/google"
-import "../globals.css"
-import Header from "@/components/Header"
-import Banner from "@/components/Banner"
-import { AuthContextProvider } from "@/contexts/AuthContext"
 import Footer from "@/components/Footer"
+import Header from "@/components/Header"
+import { AuthContextProvider } from "@/contexts/AuthContext"
+import type { Metadata } from "next"
+import { Dongle, Inter } from "next/font/google"
+import "../globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 const dongle = Dongle({ subsets: ["latin"], weight: "300" })

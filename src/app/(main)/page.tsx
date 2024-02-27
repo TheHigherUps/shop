@@ -1,6 +1,5 @@
 import Card from "@/components/Card"
 import CardContainer from "@/components/CardContainer"
-import Header from "@/components/Header"
 import Hero from "@/components/Hero"
 import TimeDisplay from "@/components/TimeDisplay"
 
