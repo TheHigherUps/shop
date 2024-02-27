@@ -22,7 +22,7 @@ export default function Home() {
                             </div>
                         }
                         image="/assets/images/assault-beans.png"
-                        title="Assault beans"
+                        title="Assault Beans"
                         quantity="10"
                         quantityExtra={
                             <span className="text-red-500 text-2xl">
@@ -36,7 +36,7 @@ export default function Home() {
                     />
 
                     <Card
-                        title="Lethal Beans"
+                        title="TheHigherUps Lethal Beans"
                         image="/assets/images/lethal-beans.png"
                         quantity="25+"
                         price="12.00"
@@ -44,14 +44,14 @@ export default function Home() {
                     />
 
                     <Card
-                        title="Assault Beans"
+                        title="TheHigherUps Assault Beans"
                         image="/assets/images/assault-beans.png"
                         quantity="50+"
                         href="/assault-beans"
                         price="7.00"
                     />
                     <Card
-                        title="Assault bench"
+                        title="TheHigherUps Assault Bench"
                         image="/assets/images/assault-bench.png"
                         quantity="100+"
                         href="/assault-bench"
