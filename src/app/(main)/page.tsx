@@ -13,7 +13,7 @@ export default function Home() {
             <Hero />
             <TimeDisplay />
             <main className="min-h-screen bg-[#2d6c9c]">
-                <div className="text-center text-4xl py-4">Products</div>
+                <div className="text-center text-6xl py-4">Products</div>
                 <CardContainer>
                     <Card
                         titleExtra={
