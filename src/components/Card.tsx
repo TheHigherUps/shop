@@ -20,9 +20,8 @@ interface CardProps {
 }
 
 export default function Card(props: CardProps) {
-    // const params = useSearchParams()
-    // const isIncreased = params.get("increaseCost") === "yes"
-    const isIncreased = false
+    const params = useSearchParams()
+    const isIncreased = params.get("increaseCost") === "yes"
     return (
         <div className="flex flex-col gap-8  md:flex-row bg-[#9c9c9c9f] px-1 sm:px-4 py-4 font-bold border border-black rounded-xl ">
             <div className="relative w-44 h-48 mx-auto">
