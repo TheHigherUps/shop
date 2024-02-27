@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
-import { ReactElement } from "react"
+import { ReactElement, Suspense } from "react"
 
 interface CardProps {
     image: string
@@ -20,8 +20,9 @@ interface CardProps {
 }
 
 export default function Card(props: CardProps) {
-    const params = useSearchParams()
-    const isIncreased = params.get("increaseCost") === "yes"
+    // const params = useSearchParams()
+    // const isIncreased = params.get("increaseCost") === "yes"
+    const isIncreased = false
     return (
         <div className="flex flex-col gap-8  md:flex-row bg-[#9c9c9c9f] px-1 sm:px-4 py-4 font-bold border border-black rounded-xl ">
             <div className="relative w-44 h-48 mx-auto">
@@ -55,7 +56,11 @@ export default function Card(props: CardProps) {
                     </p>
                     {props.discount && (
                         <span className="text-2xl">
-                            ${isIncreased ? props.increasedDiscountPrice : props.discountPrice} (Discount)
+                            $
+                            {isIncreased
+                                ? props.increasedDiscountPrice
+                                : props.discountPrice}{" "}
+                            (Discount)
                         </span>
                     )}
                 </div>
