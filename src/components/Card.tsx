@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { HTMLAttributes, ReactElement, forwardRef } from "react"
@@ -15,9 +16,8 @@ interface CardProps {
 }
 
 export default function Card(props: CardProps) {
-    const TitleExtra = props.titleExtra
     return (
-        <div className="flex flex-col md:flex-row bg-[#9c9c9c9f]">
+        <div className="flex flex-col md:flex-row bg-[#9c9c9c9f] px-2 py-4 font-bold border-y border-black">
             <div className="grid place-items-center p-4">
                 <Image
                     src={props.image}
@@ -27,16 +27,31 @@ export default function Card(props: CardProps) {
                 />
             </div>
             <div className="flex flex-col justify-evenly gap-4">
-                <div className="flex gap-2 text-4xl">
+                <div className="flex gap-2 items-center text-4xl">
                     {props.title}
                     {props.titleExtra}
                 </div>
-                <div className="flex gap-2">
+                <div className="flex gap-2 items-center">
                     <p className="text-2xl">Quantity: {props.quantity}</p>
                     {props.quantityExtra}
                 </div>
-                <div>
-                    <p className="text-2xl">Price: {props.price}</p>
+                <div className="flex gap-2 items-center">
+                    <p className={cn("text-2xl")}>
+                        Price:{" "}
+                        <span
+                            className={cn(
+                                "",
+                                props.discount && "text-red-500 line-through"
+                            )}
+                        >
+                            ${props.price}
+                        </span>
+                    </p>
+                    {props.discount && (
+                        <span className="text-2xl">
+                            ${props.discountPrice} (Discount)
+                        </span>
+                    )}
                 </div>
                 <Link
                     className="text-xl p-1 border grid place-items-center border-black rounded-md bg-white w-full"

@@ -22,12 +22,33 @@ export default function Home() {
                         title="Assault beans"
                         quantity="10"
                         quantityExtra={
-                            <span className="text-red-500">
+                            <span className="text-red-500 text-2xl">
                                 (Selling Fast!)
                             </span>
                         }
                         href="55"
                         price="123"
+                        discount
+                        discountPrice="12"
+                    />
+                    <Card
+                        titleExtra={
+                            <div className="rounded-full bg-gray-500/75 grid place-items-center px-1 text-xl text-yellow-300">
+                                (Cool Beans Edition)
+                            </div>
+                        }
+                        image="/assets/images/assault-beans.png"
+                        title="Assault beans"
+                        quantity="10"
+                        quantityExtra={
+                            <span className="text-red-500 text-2xl">
+                                (Selling Fast!)
+                            </span>
+                        }
+                        href="55"
+                        price="123"
+                        discount
+                        discountPrice="12"
                     />
                 </CardContainer>
             </main>
