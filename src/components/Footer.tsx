@@ -33,6 +33,12 @@ export default function Footer() {
                     </Link>
                 </nav>
             </div>
+            <p>
+                TheHigherUps Shop is proudly part of{" "}
+                <Link className="underline" href="/thuptross">
+                    THUPTROSS
+                </Link>
+            </p>
         </footer>
     )
 }
