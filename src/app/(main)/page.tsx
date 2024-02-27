@@ -26,10 +26,10 @@ export default function Home() {
                                 (Selling Fast!)
                             </span>
                         }
-                        href="55"
-                        price="123"
+                        href="/assault-beans-cbe"
+                        price="70"
                         discount
-                        discountPrice="12"
+                        discountPrice="50"
                     />
 
                     <Card
@@ -38,6 +38,21 @@ export default function Home() {
                         quantity="25+"
                         price="12.00"
                         href="/lethal-beans"
+                    />
+
+                    <Card
+                        title="Assault Beans"
+                        image="/assets/images/assault-beans.png"
+                        quantity="50+"
+                        href="/assault-beans"
+                        price="7.00"
+                    />
+                    <Card
+                        title="Assault bench"
+                        image="/assets/images/assault-bench.png"
+                        quantity="100+"
+                        href="/assault-bench"
+                        price="32.00"
                     />
                 </CardContainer>
             </main>
