@@ -17,16 +17,16 @@ interface CardProps {
 
 export default function Card(props: CardProps) {
     return (
-        <div className="flex flex-col md:flex-row bg-[#9c9c9c9f] px-2 py-4 font-bold border-y border-black">
-            <div className="grid place-items-center p-4">
+        <div className="flex flex-col gap-12  justify-center md:flex-row bg-[#9c9c9c9f] px-12 py-4 font-bold border-y border-black">
+            <div className="grid place-items-center p-4 relative w-36">
                 <Image
+                    className="rounded-xl"
                     src={props.image}
                     alt={props.title}
-                    height={175}
-                    width={100}
+                    fill
                 />
             </div>
-            <div className="flex flex-col justify-evenly gap-4">
+            <div className="flex flex-col justify-evenly gap-4 grow flex-1">
                 <div className="flex gap-2 items-center text-4xl">
                     {props.title}
                     {props.titleExtra}
