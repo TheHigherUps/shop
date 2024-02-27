@@ -17,7 +17,6 @@ export default function Home() {
             <main className="min-h-screen bg-[#2d6c9c]">
                 <div className="text-center text-6xl py-4">Products</div>
                 <CardContainer>
-                    <BackgroundGradient className="p-1">
 
                     <Card
             
@@ -41,7 +40,6 @@ export default function Home() {
                         discountPrice="50"
                         increasedDiscountPrice="60"
                     />
-                    </BackgroundGradient>
 
                     <Card
                         title="TheHigherUps Lethal Beans"
