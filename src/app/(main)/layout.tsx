@@ -4,17 +4,20 @@ import { AuthContextProvider } from "@/contexts/AuthContext"
 import type { Metadata } from "next"
 import { Dongle, Inter } from "next/font/google"
 import "../globals.css"
+import CartProvider from "@/contexts/CartContext"
 
 const inter = Inter({ subsets: ["latin"] })
 const dongle = Dongle({ subsets: ["latin"], weight: "300" })
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://thehigherups-shop.vercel.app'),
+    metadataBase: new URL("https://thehigherups-shop.vercel.app"),
     title: "TheHigherUps Shop",
-    description: "Purchase and shop for products on TheHigherUps Shop. Amazing products such as TheHigherUps Assault Beans and TheHigherUps Assault Bench.",
+    description:
+        "Purchase and shop for products on TheHigherUps Shop. Amazing products such as TheHigherUps Assault Beans and TheHigherUps Assault Bench.",
     openGraph: {
         title: "TheHigherUps Shop",
-        description: "Purchase and shop for products on TheHigherUps Shop. Amazing products such as TheHigherUps Assault Beans and TheHigherUps Assault Bench.",
+        description:
+            "Purchase and shop for products on TheHigherUps Shop. Amazing products such as TheHigherUps Assault Beans and TheHigherUps Assault Bench.",
         type: "website",
         url: "https://shop.thehigherups.org",
         images: [
@@ -36,12 +39,14 @@ export default function RootLayout({
     return (
         <html lang="en">
             <AuthContextProvider>
-                <body className={dongle.className + " bg-[#2d6c9c]"}>
-                    {/* <Banner /> */}
-                    <Header />
-                    {children}
-                    <Footer />
-                </body>
+                <CartProvider>
+                    <body className={dongle.className + " bg-[#2d6c9c]"}>
+                        {/* <Banner /> */}
+                        <Header />
+                        {children}
+                        <Footer />
+                    </body>
+                </CartProvider>
             </AuthContextProvider>
         </html>
     )

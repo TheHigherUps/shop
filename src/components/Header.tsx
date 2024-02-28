@@ -1,11 +1,13 @@
 "use client"
 
 import { useAuth } from "@/contexts/AuthContext"
-import { CircleUser, Home } from "lucide-react"
+import { useCart } from "@/contexts/CartContext"
+import { CircleUser, Home, ShoppingBag } from "lucide-react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 
 export default function Header() {
+    const { items } = useCart()
     const router = useRouter()
     const pathname = usePathname()
     const { loading, user } = useAuth()
@@ -17,6 +19,11 @@ export default function Header() {
             <div className="flex flex-row gap-4 items-center">
                 {user && <div className="text-2xl ">Welcome, {user.name}</div>}
                 <UserTags />
+                {items.length > 0 && (
+                    <button onClick={() => console.log(items)}>
+                        <ShoppingBag />
+                    </button>
+                )}
                 <NavIcon />
             </div>
         </header>
