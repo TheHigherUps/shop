@@ -32,7 +32,7 @@ function CartProvider({ children }: { children: React.ReactNode }) {
         const cartStorage =
             typeof window !== "undefined"
                 ? window.localStorage.getItem("cart")
-                : ""
+                : null
         if (cartStorage) {
             return JSON.parse(cartStorage)
         } else {
