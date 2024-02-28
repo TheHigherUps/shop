@@ -1,6 +1,12 @@
 "use client"
 
-import { createContext, useContext, useEffect, useState } from "react"
+import {
+    createContext,
+    useCallback,
+    useContext,
+    useEffect,
+    useState,
+} from "react"
 
 interface CartProps {
     items: string[]
@@ -23,7 +29,10 @@ function useCart() {
 
 function CartProvider({ children }: { children: React.ReactNode }) {
     const [items, setItems] = useState<string[]>(() => {
-        const cartStorage = window.localStorage.getItem("cart")
+        const cartStorage =
+            typeof window !== "undefined"
+                ? window.localStorage.getItem("cart")
+                : ""
         if (cartStorage) {
             return JSON.parse(cartStorage)
         } else {
@@ -33,12 +42,15 @@ function CartProvider({ children }: { children: React.ReactNode }) {
     function addItem(item: string) {
         setItems((prevItems) => [...prevItems, item])
     }
+
+    const updateStorage = useCallback(() => {
+        localStorage.setItem("cart", JSON.stringify(items))
+    }, [items])
+
     useEffect(() => {
         return updateStorage()
-    }, [items])
-    function updateStorage() {
-        localStorage.setItem("cart", JSON.stringify(items))
-    }
+    }, [items, updateStorage])
+
     const data = { items, addItem }
     return <CartContext.Provider value={data}>{children}</CartContext.Provider>
 }
