@@ -15,7 +15,7 @@ export default function TimeDisplay() {
         }
     }, [time])
     return (
-        <aside className="hidden xl:block sticky top-8 w-[200px] px-8 text-center bg-white text-black m-5 rounded-full">
+        <aside className="hidden xl:block  top-8 w-[200px] px-8 text-center bg-white text-black m-5 rounded-full">
             <div className="text-3xl">Local Time</div>
             <span className="text-2xl">{time}</span>
         </aside>

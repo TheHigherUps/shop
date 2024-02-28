@@ -1,8 +1,8 @@
 import { cn } from "@/lib/utils"
 
 export default function Banner({
-    children,
     className,
+    children,
 }: {
     children: React.ReactNode
     className?: string
