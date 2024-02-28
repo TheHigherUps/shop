@@ -23,10 +23,12 @@ function useCart() {
 
 function CartProvider({ children }: { children: React.ReactNode }) {
     const [items, setItems] = useState<string[]>(() => {
-        if (localStorage.getItem("cart")) {
-            return JSON.parse(localStorage.getItem("cart")!)
+        const cartStorage = window.localStorage.getItem("cart")
+        if (cartStorage) {
+            return JSON.parse(cartStorage)
+        } else {
+            return []
         }
-        return []
     })
     function addItem(item: string) {
         setItems((prevItems) => [...prevItems, item])
