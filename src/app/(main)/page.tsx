@@ -78,7 +78,7 @@ export default function Home() {
                     />
                     <Card
                         title="TheHigherUps Assault Pipe"
-                        image="/assets/images/assault-pipe.webp"
+                        image="/assets/images/assault-pipe.WEBP"
                         quantity="100+"
                         href="/assault-pipe"
                         price="32.00"
