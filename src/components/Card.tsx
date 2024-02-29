@@ -1,7 +1,7 @@
 "use client"
 import { useCart } from "@/contexts/CartContext"
 import { cn } from "@/lib/utils"
-import { PackagePlus } from "lucide-react"
+import { PackagePlus, Star } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
@@ -19,6 +19,7 @@ interface CardProps {
     discount?: boolean
     discountPrice?: string
     increasedDiscountPrice?: string
+    featured?: boolean
 }
 
 export default function Card(props: CardProps) {
@@ -26,7 +27,12 @@ export default function Card(props: CardProps) {
     const isIncreased = params.get("increaseCost") === "yes"
     const { addItem } = useCart()
     return (
-        <div className="flex flex-col gap-8  md:flex-row bg-[#9c9c9c9f] px-1 sm:px-4 py-4 font-bold border border-black rounded-xl ">
+        <div className="flex flex-col gap-8  md:flex-row bg-[#9c9c9c9f] px-1 sm:px-4 py-4 font-bold border border-black rounded-xl relative">
+            {props.featured && (
+                <>
+                    <Star className="group absolute top-1.5 left-1.5 stroke-yellow-400 fill-yellow-400" />
+                </>
+            )}
             <div className="relative w-44 h-48 mx-auto">
                 <Image
                     className="rounded-xl"

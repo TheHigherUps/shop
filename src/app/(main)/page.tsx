@@ -21,6 +21,7 @@ export default function Home() {
                 <CardContainer>
                     <BackgroundGradient className="p-1">
                         <Card
+                            featured
                             titleExtra={
                                 <div className="rounded-full bg-gray-500/75 grid place-items-center px-1 text-xl text-yellow-300">
                                     (Cool Beans Edition)
