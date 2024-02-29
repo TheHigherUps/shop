@@ -34,7 +34,7 @@ export default function AssaultBeans() {
                         stay hidden. Assault beans are extremely easy to use.
                         All you have to do is open the can and then throw it.
                         You only have one chance to throw the beans at the
-                        attacker so if you miss your fucked. So don't miss.
+                        attacker so if you miss your fucked. So don&apos;t miss.
                         Assault beans are only $7 per can. An extremely cheap
                         way to defend yourself.
                     </p>
