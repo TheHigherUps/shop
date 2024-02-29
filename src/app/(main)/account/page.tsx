@@ -37,7 +37,7 @@ const Login = () => {
         <>
             <Banner>Account Sign-in Temporarily Disabled</Banner>
             <main className="grid place-items-center min-h-[calc(100vh-6rem)]">
-                <div className="flex flex-col gap-4 px-12 py-4 rounded-xl bg-white text-black mt-12 items-center">
+                <div className="flex flex-col gap-4 px-12 py-4 rounded-xl bg-white text-black  items-center">
                     <div className="text-center">
                         <div className="text-5xl font-bold">
                             Login To Your Account
@@ -82,12 +82,12 @@ const Login = () => {
                         />
                         <button
                             type="submit"
-                            className="rounded mt-12 w-fit px-1 mx-auto bg-[#cccccc] border border-black  text-xl font-bold"
+                            className="rounded mt-8 px-3 mx-auto bg-[#cccccc] border border-black  text-2xl font-bold"
                         >
                             Login to Account
                         </button>
                     </form>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col items-center text-lg">
                         <span className="text-[#bcbcbc]">
                             Don&apos;t Have An Account?{" "}
                             <Link
