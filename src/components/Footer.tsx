@@ -8,7 +8,10 @@ export default function Footer() {
             </div>
             <div>
                 <nav className="flex gap-4 text-xl ">
-                    <Link href="www.thehigherups.org" className="underline">
+                    <Link
+                        href="https://www.thehigherups.org"
+                        className="underline"
+                    >
                         Main Website
                     </Link>
                     <span className=" bg-white/50 self-center rounded-full w-1 h-1"></span>
@@ -18,7 +21,7 @@ export default function Footer() {
                     <span className=" bg-white/50 self-center rounded-full w-1 h-1"></span>
 
                     <Link
-                        href="www.thehigherups.org/contact"
+                        href="https://www.thehigherups.org/contact"
                         className="underline"
                     >
                         Contact
@@ -26,7 +29,7 @@ export default function Footer() {
                     <span className=" bg-white/50 self-center rounded-full w-1 h-1"></span>
 
                     <Link
-                        href="www.thehigheups.org/terms"
+                        href="https://www.thehigheups.org/terms"
                         className="underline"
                     >
                         Terms
