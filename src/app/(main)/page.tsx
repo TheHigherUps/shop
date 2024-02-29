@@ -73,24 +73,24 @@ export default function Home() {
                         image="/assets/images/whistle.jpeg"
                         quantity="100+"
                         href="/assault-whistle"
-                        price="32.00"
-                        increasedPrice="37.00"
+                        price="8.00"
+                        increasedPrice="10.00"
                     />
                     <Card
                         title="TheHigherUps Assault Pipe"
                         image="/assets/images/assault-pipe.WEBP"
                         quantity="100+"
                         href="/assault-pipe"
-                        price="32.00"
-                        increasedPrice="37.00"
+                        price="52.99"
+                        increasedPrice="55.99"
                     />
                     <Card
                         title="TheHigherUps Assault Telescope"
                         image="/assets/images/assault-telescope-pe.webp"
                         quantity="100+"
                         href="/assault-telescope"
-                        price="32.00"
-                        increasedPrice="37.00"
+                        price="89.99 (Starting at)"
+                        increasedPrice="99.99 (Starting at)"
                     />
                     <div className="text-3xl place-self-center">
                         More Products Coming Soon
