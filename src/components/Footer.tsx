@@ -11,6 +11,7 @@ export default function Footer() {
                     <Link
                         href="https://www.thehigherups.org"
                         className="underline"
+                        target="_blank"
                     >
                         Main Website
                     </Link>
@@ -23,6 +24,7 @@ export default function Footer() {
                     <Link
                         href="https://www.thehigherups.org/contact"
                         className="underline"
+                        target="_blank"
                     >
                         Contact
                     </Link>
@@ -31,6 +33,7 @@ export default function Footer() {
                     <Link
                         href="https://www.thehigheups.org/terms"
                         className="underline"
+                        target="_blank"
                     >
                         Terms
                     </Link>
