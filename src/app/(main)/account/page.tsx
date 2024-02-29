@@ -45,7 +45,7 @@ const Login = () => {
                     </div>
                     <form
                         onSubmit={handleSubmit}
-                        className="flex flex-col gap-3 text-center"
+                        className="flex flex-col gap-3 text-center w-full"
                     >
                         <label htmlFor="email" className="text-3xl font-bold">
                             Enter Email Address
@@ -60,7 +60,7 @@ const Login = () => {
                             }
                             id="email"
                             type="email"
-                            className="rounded bg-[#cccccc] border border-black w-full text-xl"
+                            className="rounded bg-[#cccccc] border border-black w-full text-xl px-1"
                         />
                         <label
                             htmlFor="password"
@@ -78,7 +78,7 @@ const Login = () => {
                             }}
                             id="password"
                             type="password"
-                            className="rounded bg-[#cccccc] border border-black w-full text-xl"
+                            className="rounded bg-[#cccccc] border border-black w-full text-xl px-1 "
                         />
                         <button
                             type="submit"
