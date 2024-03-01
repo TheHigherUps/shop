@@ -51,6 +51,15 @@ export default function AssaultBeans() {
                             Add to Cart
                         </button>
                     </div>
+                    <div className="text-center text-lg">
+                        WARNING: This product is banned in 39 states:{" "}
+                        <Link
+                            className="underline text-bold"
+                            href="/lethal-beans/banned-states"
+                        >
+                            View Banned States
+                        </Link>
+                    </div>
                 </div>
             </div>
         </main>
