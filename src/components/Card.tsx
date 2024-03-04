@@ -27,7 +27,7 @@ export default function Card(props: CardProps) {
     const isIncreased = params.get("increaseCost") === "yes"
     const { addItem } = useCart()
     return (
-        <div className="flex flex-col gap-8  md:flex-row bg-[#9c9c9c9f] px-1 sm:px-4 py-4 font-bold border border-black rounded-xl relative">
+        <div className="flex flex-col gap-8  md:flex-row bg-[#9c9c9c9f] px-1 sm:px-4 py-4 font-bold border border-black rounded-xl relative items-center">
             {props.featured && (
                 <>
                     <Star className="group absolute top-1.5 left-1.5 stroke-yellow-400 fill-yellow-400" />
@@ -35,7 +35,7 @@ export default function Card(props: CardProps) {
             )}
             <div className="relative w-44 h-48 mx-auto">
                 <Image
-                    className="rounded-xl"
+                    className="rounded-xl "
                     src={props.image}
                     alt={props.title}
                     fill
