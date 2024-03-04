@@ -16,6 +16,10 @@ export const BoxesCore = ({ className, ...rest }: { className?: string }) => {
         "--blue-300",
         "--indigo-300",
         "--violet-300",
+        "--lime-300",
+        "--green-300",
+        "--teal-300",
+        "--cyan-300",
     ]
     const getRandomColor = () => {
         return colors[Math.floor(Math.random() * colors.length)]
