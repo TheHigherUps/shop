@@ -31,7 +31,7 @@ export default function Footer() {
                     <span className=" bg-white/50 self-center rounded-full w-1 h-1"></span>
 
                     <Link
-                        href="https://www.thehigheups.org/terms"
+                        href="https://www.thehigherups.org/terms"
                         className="underline"
                         target="_blank"
                     >
