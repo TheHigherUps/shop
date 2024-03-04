@@ -2,12 +2,14 @@ import Banner from "@/components/Banner"
 import Card from "@/components/Card"
 import CardContainer from "@/components/CardContainer"
 import Hero from "@/components/Hero"
+import MovingPopup from "@/components/MovingPopup"
 import TimeDisplay from "@/components/TimeDisplay"
 import { BackgroundGradient } from "@/components/ui/background-gradient"
 
 export default function Home() {
     return (
         <>
+            <MovingPopup />
             <Banner>
                 This website is in beta and is currently under construction
             </Banner>
