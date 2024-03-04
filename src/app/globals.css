@@ -269,3 +269,40 @@ body {
 .text-shadow {
     text-shadow: 0 -1px white, 0 1px white, -1px 0 white, 1px 0 white;
 }
+
+.beans {
+    animation: secretBeans 2s ease 0s infinite normal backwards;
+}
+
+@keyframes secretBeans {
+    0%,
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60% {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px);
+    }
+
+    80% {
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px);
+    }
+
+    90% {
+        -webkit-transform: translateX(-8px);
+        transform: translateX(-8px);
+    }
+}

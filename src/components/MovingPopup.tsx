@@ -22,7 +22,7 @@ export default function MovingPopup() {
     }
     return (
         <div className="fixed bottom-12 left-1/2 -translate-x-1/2 -tran w-3/4 min-h-16  text-black z-[9999] ">
-            <div className="w-full h-full px-2 relative animate-bounce bg-[#d8bfd8]">
+            <div className="w-full h-full px-2 relative beans bg-[#d8bfd8]">
                 <div className="text-3xl">
                     WOAH! CHECK OUT THIS LIMITED TIME OFFER
                 </div>
