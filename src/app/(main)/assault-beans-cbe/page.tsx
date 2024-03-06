@@ -2,7 +2,7 @@ import {Metadata} from "next";
 import AssaultBeansCbe from "./AssaultBeansCBE"
 
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
     title: "Assault Beans Cool Beans Edition - TheHigherUps Shop"
 }
 
