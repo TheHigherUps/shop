@@ -7,10 +7,47 @@ import Hero from "@/components/Hero"
 import MovingPopup from "@/components/MovingPopup"
 import TimeDisplay from "@/components/TimeDisplay"
 import {BackgroundGradient} from "@/components/ui/background-gradient"
+import {createRef, useCallback, useEffect, useState} from "react";
+import {Volume2, VolumeX} from "lucide-react";
+import OfflineDetection from "@/components/OfflineDetection";
 
 export default function Home() {
+    const [playing, setPlaying] = useState<boolean>(true)
+    const player = createRef<HTMLAudioElement>()
+
+    const playAudio = useCallback(() => {
+        if (player.current) {
+            setPlaying(true)
+            player.current.play().then(() => {
+            })
+        }
+    }, [player])
+
+    const pauseAudio = useCallback(() => {
+        if (player.current) {
+            setPlaying(false)
+            player.current.pause()
+            player.current.currentTime = 0
+        }
+    }, [player])
+
+    useEffect(() => {
+        document.body.addEventListener("click", () => {
+            if (player.current?.paused) {
+                playAudio()
+            }
+        })
+        return document.body.removeEventListener("click", () => {
+        })
+
+    }, [playAudio, player]);
+
+
     return (
         <>
+            <OfflineDetection />
+            <ToggleMusicButton playing={playing} playAudio={playAudio} pauseAudio={pauseAudio}/>
+            <audio ref={player} src="/assets/sounds/Vacation.mp3" autoPlay loop controls={false}></audio>
             <MovingPopup/>
             <Banner>
                 This website is in beta and is currently under construction
@@ -105,4 +142,15 @@ export default function Home() {
             </main>
         </>
     )
+}
+
+const ToggleMusicButton = ({playing, pauseAudio, playAudio}: {
+    playing: boolean,
+    playAudio: () => void,
+    pauseAudio: () => void
+}) => {
+    return <button onClick={playing ? pauseAudio : playAudio}
+                   className="grid place-items-center fixed bottom-8 right-8 bg-gray-500/75 rounded-full w-10 h-10 hover:animate-pulse">
+        {!playing ? <VolumeX/> : <Volume2/>}
+    </button>
 }
