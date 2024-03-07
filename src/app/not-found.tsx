@@ -55,6 +55,7 @@ export default function NotFound() {
             document.body.removeEventListener("click", playMusic)
             window.removeEventListener("load", setup)
             clearInterval(x)
+
         }
     }, [increaseCount, playMusic, setup])
 
