@@ -1,26 +1,29 @@
 "use client"
 
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {Loader2} from "lucide-react";
 
 export default function OfflineDetection() {
     const [offline, setOffline] = useState<boolean>(false)
+
+    const turnOffline = useCallback(() => {
+        setOffline(true)
+    }, [])
+
+    const turnOnline = useCallback(() => {
+        setOffline(false)
+    },[])
+
     useEffect(() => {
-        window.addEventListener("offline", () => {
-            setOffline(true)
-        })
-        window.addEventListener("online", () => {
-            setOffline(false)
-        })
+        window.addEventListener("offline", turnOffline)
+        window.addEventListener("online", turnOnline)
 
         return () => {
-            window.removeEventListener("offline", () => {
-            })
-            window.removeEventListener("online", () => {
-            })
+            window.removeEventListener("offline", turnOffline)
+            window.removeEventListener("online", turnOnline)
         }
 
-    }, [])
+    }, [turnOffline, turnOnline])
 
     if (!offline) return null
 
