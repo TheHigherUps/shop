@@ -54,7 +54,7 @@ export default function Home() {
 
     return (
         <>
-            {/*<OfflineDetection />*/}
+            <OfflineDetection />
             <ToggleMusicButton
                 playing={playing}
                 playAudio={playAudio}
