@@ -94,7 +94,6 @@ export default function Home() {
                         increasedPrice="15.00"
                         href="/lethal-beans"
                     />
-
                     <Card
                         title="TheHigherUps Assault Beans"
                         image="/assets/images/assault-beans.png"
@@ -134,6 +133,14 @@ export default function Home() {
                         href="/assault-telescope"
                         price="89.99 (Starting at)"
                         increasedPrice="99.99 (Starting at)"
+                    />
+                    <Card
+                        title="New Product Coming Soon"
+                        image={"/assets/images/assault-umbrella.jpeg"}
+                        quantity={"Unreleased"}
+                        href={"/"}
+                        price={"??.??"}
+                        increasedPrice={"??.??"}
                     />
                     <div className="text-3xl place-self-center">
                         More Products Coming Soon
