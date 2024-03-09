@@ -10,6 +10,15 @@ import {BackgroundGradient} from "@/components/ui/background-gradient"
 import {createRef, useCallback, useEffect, useState} from "react";
 import {Volume2, VolumeX} from "lucide-react";
 import OfflineDetection from "@/components/OfflineDetection";
+import {
+    ProductAbout, ProductButton,
+    ProductCard,
+    ProductImage,
+    ProductPrice,
+    ProductQuantity,
+    ProductTitle
+} from "@/components/ProductCard";
+import Image from "next/image"
 
 export default function Home() {
     const [playing, setPlaying] = useState<boolean>(true)
@@ -45,7 +54,7 @@ export default function Home() {
 
     return (
         <>
-            <OfflineDetection />
+            {/*<OfflineDetection />*/}
             <ToggleMusicButton playing={playing} playAudio={playAudio} pauseAudio={pauseAudio}/>
             <audio ref={player} src="/assets/sounds/Vacation.mp3" autoPlay loop controls={false}></audio>
             <MovingPopup/>
@@ -85,7 +94,18 @@ export default function Home() {
                             increasedDiscountPrice="60"
                         />
                     </BackgroundGradient>
-
+                    <div></div>
+                    <ProductCard>
+                        <ProductImage>
+                            <Image className={"rounded-xl"} src={"/assets/images/lethal-beans.png"} alt={""} fill />
+                        </ProductImage>
+                        <ProductAbout>
+                            <ProductTitle>TheHigherUps Assault Beans</ProductTitle>
+                            <ProductQuantity>Quantity 25+</ProductQuantity>
+                            <ProductPrice>Price: $12.00</ProductPrice>
+                            <ProductButton href={"/"}>View Product</ProductButton>
+                        </ProductAbout>
+                    </ProductCard>
                     <Card
                         title="TheHigherUps Lethal Beans"
                         image="/assets/images/lethal-beans.png"

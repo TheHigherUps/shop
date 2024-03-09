@@ -7,18 +7,18 @@ import Link from "next/link";
 function ProductCard({children, className}: { children: React.ReactNode, className?: string }) {
     return (
         <div
-            className={cn("flex flex-col gap-8  md:flex-row bg-[#9c9c9c9f] px-1 sm:px-4 py-4 font-bold border border-black rounded-xl relative ", className)}>
+            className={cn("flex flex-col gap-8  md:flex-row bg-[#9c9c9c9f] px-1 sm:px-4 py-4 font-bold border border-black rounded-xl relative", className)}>
             {children}
         </div>
     )
 }
 
 const ProductImage = ({children, className}: { children: React.ReactNode, className?: string }) => {
-    return <div className={cn("relative w-44 h-48 mx-auto", className)}>{children}</div>
+    return <div className={cn("relative w-44 h-48 mx-auto self-center", className)}>{children}</div>
 }
 
 const ProductAbout = ({children, className}: { children: React.ReactNode, className?: string }) => {
-    return <div className={cn("flex flex-col justify-evenly gap-4 grow", className)}>{children}</div>
+    return <div className={cn("flex flex-col justify-evenly grow", className)}>{children}</div>
 }
 
 const ProductTitle = ({children, className}: { children: React.ReactNode, className?: string }) => {
