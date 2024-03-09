@@ -35,7 +35,7 @@ export default function Card(props: CardProps) {
             )}
             <div className="relative w-44 h-48 mx-auto">
                 <Image
-                    className="rounded-xl "
+                    className="rounded-xl"
                     src={props.image}
                     alt={props.title}
                     fill
