@@ -56,7 +56,7 @@ export default function Card(props: CardProps) {
                         <span
                             className={cn(
                                 "",
-                                props.discount && "text-red-500 line-through"
+                                props.discount && "text-red-500 line-through",
                             )}
                         >
                             ${isIncreased ? props.increasedPrice : props.price}

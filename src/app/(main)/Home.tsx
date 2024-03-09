@@ -6,29 +6,32 @@ import CardContainer from "@/components/CardContainer"
 import Hero from "@/components/Hero"
 import MovingPopup from "@/components/MovingPopup"
 import TimeDisplay from "@/components/TimeDisplay"
-import {BackgroundGradient} from "@/components/ui/background-gradient"
-import {createRef, useCallback, useEffect, useState} from "react";
-import {Volume2, VolumeX} from "lucide-react";
-import OfflineDetection from "@/components/OfflineDetection";
+import { BackgroundGradient } from "@/components/ui/background-gradient"
+import { createRef, useCallback, useEffect, useState } from "react"
+import { Volume2, VolumeX } from "lucide-react"
+import OfflineDetection from "@/components/OfflineDetection"
 import {
-    ProductAbout, ProductButton,
+    ProductAbout,
+    ProductButton,
     ProductCard,
     ProductImage,
     ProductPrice,
     ProductQuantity,
-    ProductTitle
-} from "@/components/ProductCard";
+    ProductTitle,
+} from "@/components/ProductCard"
 import Image from "next/image"
+import { useSearchParams } from "next/navigation"
 
 export default function Home() {
     const [playing, setPlaying] = useState<boolean>(true)
     const player = createRef<HTMLAudioElement>()
+    const params = useSearchParams()
+    const isIncreased = params.get("increaseCost") === "yes"
 
     const playAudio = useCallback(() => {
         if (player.current) {
             setPlaying(true)
-            player.current.play().then(() => {
-            })
+            player.current.play().then(() => {})
         }
     }, [player])
 
@@ -46,138 +49,233 @@ export default function Home() {
                 playAudio()
             }
         })
-        return document.body.removeEventListener("click", () => {
-        })
-
-    }, [playAudio, player]);
-
+        return document.body.removeEventListener("click", () => {})
+    }, [playAudio, player])
 
     return (
         <>
             {/*<OfflineDetection />*/}
-            <ToggleMusicButton playing={playing} playAudio={playAudio} pauseAudio={pauseAudio}/>
-            <audio ref={player} src="/assets/sounds/Vacation.mp3" autoPlay loop controls={false}></audio>
-            <MovingPopup/>
+            <ToggleMusicButton
+                playing={playing}
+                playAudio={playAudio}
+                pauseAudio={pauseAudio}
+            />
+            <audio
+                ref={player}
+                src="/assets/sounds/Vacation.mp3"
+                autoPlay
+                loop
+                controls={false}
+            ></audio>
+            <MovingPopup />
             <Banner>
                 This website is in beta and is currently under construction
             </Banner>
             <Banner className="text-xl min-h-4">
                 Known Issue: Adding items to cart causes error. Fix coming soon
             </Banner>
-            <Hero/>
-            <TimeDisplay/>
+            <Hero />
+            <TimeDisplay />
             <main className="min-h-screen bg-[#2d6c9c]">
                 <div className="text-center text-6xl py-4">Products</div>
                 <CardContainer>
                     <BackgroundGradient className="p-1">
-                        <Card
-                            featured
-                            titleExtra={
-                                <div
-                                    className="rounded-full bg-gray-500/75 grid place-items-center px-1 text-xl text-yellow-300">
-                                    (Cool Beans Edition)
-                                </div>
-                            }
-                            image="/assets/images/assault-beans.png"
-                            title="Assault Beans"
-                            quantity="10"
-                            quantityExtra={
-                                <span className="text-red-500 text-2xl">
-                                    (Selling Fast!)
-                                </span>
-                            }
-                            href="/assault-beans-cbe"
-                            price="70"
-                            increasedPrice="70"
-                            discount
-                            discountPrice="50"
-                            increasedDiscountPrice="60"
-                        />
+                        <ProductCard featured>
+                            <ProductImage>
+                                <Image
+                                    className="rounded-xl"
+                                    src="/assets/images/assault-beans.png"
+                                    alt="TheHigherUps Assault Beans Cool Beans Edition"
+                                    fill
+                                />
+                            </ProductImage>
+                            <ProductAbout>
+                                <ProductTitle>
+                                    Assault Beans{" "}
+                                    <div className="rounded-full bg-gray-500/75 grid place-items-center px-1 text-xl text-yellow-300">
+                                        (Cool Beans Edition)
+                                    </div>
+                                </ProductTitle>
+                                <ProductQuantity>
+                                    Quantity: 10{" "}
+                                    <span className="text-red-500">
+                                        (Selling Fast)
+                                    </span>
+                                </ProductQuantity>
+                                <ProductPrice>
+                                    Price:{" "}
+                                    <span className="text-red-500 line-through">
+                                        $70
+                                    </span>{" "}
+                                    ${isIncreased ? "60" : "50"}
+                                    (Discount)
+                                </ProductPrice>
+                                <ProductButton href="/assault-beans-cbe">
+                                    View Product
+                                </ProductButton>
+                            </ProductAbout>
+                        </ProductCard>
                     </BackgroundGradient>
-                    <div></div>
                     <ProductCard>
                         <ProductImage>
-                            <Image className={"rounded-xl"} src={"/assets/images/lethal-beans.png"} alt={""} fill />
+                            <Image
+                                className="rounded-xl"
+                                src="/assets/images/lethal-beans.png"
+                                alt="TheHigherUps Lethal Beans"
+                                fill
+                            />
                         </ProductImage>
                         <ProductAbout>
-                            <ProductTitle>TheHigherUps Assault Beans</ProductTitle>
-                            <ProductQuantity>Quantity 25+</ProductQuantity>
-                            <ProductPrice>Price: $12.00</ProductPrice>
-                            <ProductButton href={"/"}>View Product</ProductButton>
+                            <ProductTitle>
+                                TheHigherUps Lethal Beans
+                            </ProductTitle>
+                            <ProductQuantity>Quantity: 25+</ProductQuantity>
+                            <ProductPrice>
+                                Price: ${isIncreased ? "15.00" : "12.00"}
+                            </ProductPrice>
+                            <ProductButton href="/lethal-beans" />
                         </ProductAbout>
                     </ProductCard>
-                    <Card
-                        title="TheHigherUps Lethal Beans"
-                        image="/assets/images/lethal-beans.png"
-                        quantity="25+"
-                        price="12.00"
-                        increasedPrice="15.00"
-                        href="/lethal-beans"
-                    />
-                    <Card
-                        title="TheHigherUps Assault Beans"
-                        image="/assets/images/assault-beans.png"
-                        quantity="50+"
-                        href="/assault-beans"
-                        price="7.00"
-                        increasedPrice="12.00"
-                    />
-                    <Card
-                        title="TheHigherUps Assault Bench"
-                        image="/assets/images/assault-bench.png"
-                        quantity="100+"
-                        href="/assault-bench"
-                        price="32.00"
-                        increasedPrice="37.00"
-                    />
-                    <Card
-                        title="TheHigherUps Assault Whistle"
-                        image="/assets/images/whistle.jpeg"
-                        quantity="100+"
-                        href="/assault-whistle"
-                        price="8.00"
-                        increasedPrice="10.00"
-                    />
-                    <Card
-                        title="TheHigherUps Assault Pipe"
-                        image="/assets/images/assault-pipe.WEBP"
-                        quantity="100+"
-                        href="/assault-pipe"
-                        price="52.99"
-                        increasedPrice="55.99"
-                    />
-                    <Card
-                        title="TheHigherUps Assault Telescope"
-                        image="/assets/images/assault-telescope-pe.webp"
-                        quantity="100+"
-                        href="/assault-telescope"
-                        price="89.99 (Starting at)"
-                        increasedPrice="99.99 (Starting at)"
-                    />
-                    <Card
-                        title="New Product Coming Soon"
-                        image={"/assets/images/assault-umbrella.jpeg"}
-                        quantity={"Unreleased"}
-                        href={"/"}
-                        price={"??.??"}
-                        increasedPrice={"??.??"}
-                    />
-                    <div className="text-3xl place-self-center">
-                        More Products Coming Soon
-                    </div>
+                    <ProductCard>
+                        <ProductImage>
+                            <Image
+                                className="rounded-xl"
+                                src="/assets/images/assault-beans.png"
+                                alt="TheHigherUps Assault Beans"
+                                fill
+                            />
+                        </ProductImage>
+                        <ProductAbout>
+                            <ProductTitle>
+                                TheHigherUps Assault Beans
+                            </ProductTitle>
+                            <ProductQuantity>Quantity: 50+</ProductQuantity>
+                            <ProductPrice>
+                                Price: ${isIncreased ? "12.00" : "7.00"}
+                            </ProductPrice>
+                            <ProductButton href="/assault-beans" />
+                        </ProductAbout>
+                    </ProductCard>
+                    <ProductCard>
+                        <ProductImage>
+                            <Image
+                                className="rounded-xl"
+                                src="/assets/images/assault-bench.png"
+                                alt="TheHigherUps Assault Bench"
+                                fill
+                            />
+                        </ProductImage>
+                        <ProductAbout>
+                            <ProductTitle>
+                                TheHigherUps Assault Bench
+                            </ProductTitle>
+                            <ProductQuantity>Quantity: 100+</ProductQuantity>
+                            <ProductPrice>
+                                Price: ${isIncreased ? "37.00" : "32.00"}
+                            </ProductPrice>
+                            <ProductButton href="/assault-bench" />
+                        </ProductAbout>
+                    </ProductCard>
+                    <ProductCard>
+                        <ProductImage>
+                            <Image
+                                className="rounded-xl"
+                                src="/assets/images/whistle.jpeg"
+                                alt="TheHigherUps Assault Whistle"
+                                fill
+                            />
+                        </ProductImage>
+                        <ProductAbout>
+                            <ProductTitle>
+                                TheHigherUps Assault Whistle
+                            </ProductTitle>
+                            <ProductQuantity>Quantity: 100+</ProductQuantity>
+                            <ProductPrice>
+                                Price: ${isIncreased ? "10.00" : "8.00"}
+                            </ProductPrice>
+                            <ProductButton href="/assault-whistle" />
+                        </ProductAbout>
+                    </ProductCard>
+                    <ProductCard>
+                        <ProductImage>
+                            <Image
+                                className="rounded-xl"
+                                src="/assets/images/assault-pipe.WEBP"
+                                alt="TheHigherUps Assault Pipe"
+                                fill
+                            />
+                        </ProductImage>
+                        <ProductAbout>
+                            <ProductTitle>
+                                TheHigherUps Assault Pipe
+                            </ProductTitle>
+                            <ProductQuantity>Quantity: 100+</ProductQuantity>
+                            <ProductPrice>
+                                Price: ${isIncreased ? "55.99" : "52.99"}
+                            </ProductPrice>
+                            <ProductButton href="/assault-pipe" />
+                        </ProductAbout>
+                    </ProductCard>
+                    <ProductCard>
+                        <ProductImage>
+                            <Image
+                                className="rounded-xl"
+                                src="/assets/images/assault-telescope-pe.webp"
+                                alt="TheHigherUps Assault Telescope"
+                                fill
+                            />
+                        </ProductImage>
+                        <ProductAbout>
+                            <ProductTitle>
+                                TheHigherUps Assault Telescope
+                            </ProductTitle>
+                            <ProductQuantity>Quantity: 100+</ProductQuantity>
+                            <ProductPrice>
+                                Price: $
+                                {isIncreased
+                                    ? "99.99 (Starting at)"
+                                    : "89.99 (Starting At)"}
+                            </ProductPrice>
+                            <ProductButton href="/assault-telescope" />
+                        </ProductAbout>
+                    </ProductCard>
+                    <ProductCard>
+                        <ProductImage>
+                            <Image
+                                className="rounded-xl object-cover"
+                                src="/assets/images/image-not-found.png"
+                                alt=""
+                                fill
+                            />
+                        </ProductImage>
+                        <ProductAbout>
+                            <ProductTitle>New Product Coming Soon</ProductTitle>
+                        </ProductAbout>
+                    </ProductCard>
+                    {/*<div className="text-3xl place-self-center">*/}
+                    {/*    More Products Coming Soon*/}
+                    {/*</div>*/}
                 </CardContainer>
             </main>
         </>
     )
 }
 
-const ToggleMusicButton = ({playing, pauseAudio, playAudio}: {
-    playing: boolean,
-    playAudio: () => void,
+const ToggleMusicButton = ({
+    playing,
+    pauseAudio,
+    playAudio,
+}: {
+    playing: boolean
+    playAudio: () => void
     pauseAudio: () => void
 }) => {
-    return <button onClick={playing ? pauseAudio : playAudio}
-                   className="grid place-items-center fixed bottom-8 right-8 bg-gray-500/75 rounded-full w-10 h-10 hover:animate-pulse">
-        {!playing ? <VolumeX/> : <Volume2/>}
-    </button>
+    return (
+        <button
+            onClick={playing ? pauseAudio : playAudio}
+            className="grid place-items-center fixed bottom-8 right-8 bg-gray-500/75 rounded-full w-10 h-10 hover:animate-pulse"
+        >
+            {!playing ? <VolumeX /> : <Volume2 />}
+        </button>
+    )
 }
