@@ -17,10 +17,11 @@ import {
     ProductImage,
     ProductPrice,
     ProductQuantity,
-    ProductTitle,
+    ProductTitle
 } from "@/components/ProductCard"
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
+import { SparklesCore } from "@/components/ui/sparkles"
 
 export default function Home() {
     const [playing, setPlaying] = useState<boolean>(true)
@@ -31,7 +32,8 @@ export default function Home() {
     const playAudio = useCallback(() => {
         if (player.current) {
             setPlaying(true)
-            player.current.play().then(() => {})
+            player.current.play().then(() => {
+            })
         }
     }, [player])
 
@@ -49,7 +51,8 @@ export default function Home() {
                 playAudio()
             }
         })
-        return document.body.removeEventListener("click", () => {})
+        return document.body.removeEventListener("click", () => {
+        })
     }, [playAudio, player])
 
     return (
@@ -92,7 +95,8 @@ export default function Home() {
                             <ProductAbout>
                                 <ProductTitle>
                                     Assault Beans{" "}
-                                    <div className="rounded-full bg-gray-500/75 grid place-items-center px-1 text-xl text-yellow-300">
+                                    <div
+                                        className="rounded-full bg-gray-500/75 grid place-items-center px-1 text-xl text-yellow-300">
                                         (Cool Beans Edition)
                                     </div>
                                 </ProductTitle>
@@ -242,16 +246,25 @@ export default function Home() {
                     <ProductCard>
                         <ProductImage>
                             <Image
-                                className="rounded-xl object-cover"
+                                className="rounded-xl object-cover blur-md"
                                 src="/assets/images/image-not-found.png"
                                 alt=""
                                 fill
                             />
                         </ProductImage>
+                        <SparklesCore
+                            background="transparent"
+                            minSize={0.4}
+                            maxSize={1}
+                            particleDensity={1200}
+                            className="w-full h-full absolute inset-0 backdrop-blur-2xl rounded-xl"
+                            particleColor="#FFFFFF"
+                        />
                         <ProductAbout>
-                            <ProductTitle>New Product Coming Soon</ProductTitle>
+                            <ProductTitle className="z-[9999]">New Product Coming Soon</ProductTitle>
                         </ProductAbout>
                     </ProductCard>
+
                     {/*<div className="text-3xl place-self-center">*/}
                     {/*    More Products Coming Soon*/}
                     {/*</div>*/}
@@ -262,10 +275,10 @@ export default function Home() {
 }
 
 const ToggleMusicButton = ({
-    playing,
-    pauseAudio,
-    playAudio,
-}: {
+                               playing,
+                               pauseAudio,
+                               playAudio
+                           }: {
     playing: boolean
     playAudio: () => void
     pauseAudio: () => void
