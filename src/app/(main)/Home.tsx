@@ -72,9 +72,6 @@ export default function Home() {
             <Banner>
                 This website is in beta and is currently under construction
             </Banner>
-            <Banner className="text-xl min-h-4">
-                Known Issue: Adding items to cart causes error. Fix coming soon
-            </Banner>
             <Hero />
             <TimeDisplay />
             <main className="min-h-screen bg-[#2d6c9c]">
