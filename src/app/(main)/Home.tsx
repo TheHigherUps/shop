@@ -17,7 +17,7 @@ import {
     ProductImage,
     ProductPrice,
     ProductQuantity,
-    ProductTitle
+    ProductTitle,
 } from "@/components/ProductCard"
 import Image from "next/image"
 import { useSearchParams } from "next/navigation"
@@ -32,8 +32,7 @@ export default function Home() {
     const playAudio = useCallback(() => {
         if (player.current) {
             setPlaying(true)
-            player.current.play().then(() => {
-            })
+            player.current.play().then(() => {})
         }
     }, [player])
 
@@ -51,8 +50,7 @@ export default function Home() {
                 playAudio()
             }
         })
-        return document.body.removeEventListener("click", () => {
-        })
+        return document.body.removeEventListener("click", () => {})
     }, [playAudio, player])
 
     return (
@@ -95,8 +93,7 @@ export default function Home() {
                             <ProductAbout>
                                 <ProductTitle>
                                     Assault Beans{" "}
-                                    <div
-                                        className="rounded-full bg-gray-500/75 grid place-items-center px-1 text-xl text-yellow-300">
+                                    <div className="rounded-full bg-gray-500/75 grid place-items-center px-1 text-xl text-yellow-300">
                                         (Cool Beans Edition)
                                     </div>
                                 </ProductTitle>
@@ -262,7 +259,9 @@ export default function Home() {
                         </ProductImage>
 
                         <ProductAbout>
-                            <ProductTitle className="z-[9999]">New Product Coming Soon</ProductTitle>
+                            <ProductTitle className="z-[9999]">
+                                New Product Coming Soon
+                            </ProductTitle>
                         </ProductAbout>
                     </ProductCard>
 
@@ -276,10 +275,10 @@ export default function Home() {
 }
 
 const ToggleMusicButton = ({
-                               playing,
-                               pauseAudio,
-                               playAudio
-                           }: {
+    playing,
+    pauseAudio,
+    playAudio,
+}: {
     playing: boolean
     playAudio: () => void
     pauseAudio: () => void
