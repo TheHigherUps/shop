@@ -244,6 +244,14 @@ export default function Home() {
                         </ProductAbout>
                     </ProductCard>
                     <ProductCard>
+                        <SparklesCore
+                            background="transparent"
+                            minSize={0.4}
+                            maxSize={1}
+                            particleDensity={1200}
+                            className="w-full h-full absolute inset-0 backdrop-blur-2xl rounded-xl z-10"
+                            particleColor="#FFFFFF"
+                        />
                         <ProductImage>
                             <Image
                                 className="rounded-xl object-cover blur-md"
@@ -252,14 +260,7 @@ export default function Home() {
                                 fill
                             />
                         </ProductImage>
-                        <SparklesCore
-                            background="transparent"
-                            minSize={0.4}
-                            maxSize={1}
-                            particleDensity={1200}
-                            className="w-full h-full absolute inset-0 backdrop-blur-2xl rounded-xl"
-                            particleColor="#FFFFFF"
-                        />
+
                         <ProductAbout>
                             <ProductTitle className="z-[9999]">New Product Coming Soon</ProductTitle>
                         </ProductAbout>
