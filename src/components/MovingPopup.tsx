@@ -30,10 +30,13 @@ export default function MovingPopup() {
                     &apos;SecretBeansCB&apos; For An Extra Can Of Assualt Beans
                     FOR FREE!
                 </p>
-                <button onClick={() => closeBanner()}>
+                <button
+                    className="absolute top-2 right-2 group"
+                    onClick={() => closeBanner()}
+                >
                     <X
-                        size={18}
-                        className="absolute top-2 right-2 hover:stroke-red-500 transition-colors"
+                        size={12}
+                        className={` hover:stroke-red-500 transition-all group-hover:translate-y-12`}
                     />
                 </button>
             </div>
