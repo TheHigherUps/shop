@@ -1,6 +1,6 @@
 "use client"
 
-import Banner from "@/components/Banner"
+import Banner, { BannerButton } from "@/components/Banner"
 import Card from "@/components/Card"
 import CardContainer from "@/components/CardContainer"
 import Hero from "@/components/Hero"
@@ -69,6 +69,9 @@ export default function Home() {
                 controls={false}
             ></audio>
             <MovingPopup />
+            <Banner className="bg-red-500 text-white">
+                Accounts have been temporarily disabled
+            </Banner>
             <Banner>
                 This website is in beta and is currently under construction
             </Banner>
