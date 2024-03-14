@@ -1,7 +1,6 @@
 "use client"
 
-import Banner, { BannerButton } from "@/components/Banner"
-import Card from "@/components/Card"
+import Banner from "@/components/Banner"
 import CardContainer from "@/components/CardContainer"
 import Hero from "@/components/Hero"
 import MovingPopup from "@/components/MovingPopup"
