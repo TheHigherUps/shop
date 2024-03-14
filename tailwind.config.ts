@@ -18,6 +18,10 @@ const config: Config = {
                 "gradient-conic":
                     "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
             },
+            minHeight: {
+                page: "calc(100vh - 3rem)",
+                banner: "calc(100vh - 6rem)",
+            },
         },
     },
     plugins: [addVariablesForColors],
@@ -26,7 +30,7 @@ const config: Config = {
 function addVariablesForColors({ addBase, theme }: any) {
     let allColors = flattenColorPalette(theme("colors"))
     let newVars = Object.fromEntries(
-        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+        Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),
     )
 
     addBase({
