@@ -26,7 +26,7 @@ export default function Page() {
                 setY(y)
             }
         }
-    }, [container, x, y])
+    }, [container])
     return (
         <>
             <main className="min-h-page grid place-items-center">
